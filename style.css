@@ -174,6 +174,169 @@ main{
     background-repeat: no-repeat;
 }
 
+.section-1 {
+    width: 100%;
+    height: 35vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 60px 0;
+    gap: 35px;
+    text-align: center;
+}
+
+.section-1 > h3 {
+    font-size: 23px;
+    font-weight: 50;
+}
+
+.section-1 > .companies-design-list {
+    display: flex;
+    gap: 10px;
+    font-size: 30px;
+}
+
+.section-1 > .companies-design-list > div:nth-child(1) {
+    /* position: absolute; */
+    /* animation: section1 3s linear 3s infinite direction both; */
+    /* animation: section1 5s linear infinite ; */
+}
+
+.section-1 > p{
+    margin-top: 20px;
+    width: 720px;
+    height: 157px;
+    font-size: 28px;
+    line-height: 35px;
+    font-weight: 550;
+}
+.section-1 > p > span{
+    font-size: 25px;
+}
+
+.section-1 > p > span > span {
+    background-color: #FF4F01;
+    color: white;
+}
+
+.founder{
+    width: 180px;
+    height: 105px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.founder > div {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    background: url(./images/photograph1.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.founder > h4{
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.section-2{
+    /* background-color: rebeccapurple; */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 60px 0;
+    gap: 40px;
+}
+
+.section-heading-container{
+    display: flex;
+    width: 600px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 15px;
+}
+
+.section-heading{
+    width: 110px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px;
+    background-color: #313131;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.sub-heading{
+    font-size: 36px;
+}
+
+.heading-desc{
+    font-size: 20px;
+}
+
+.cards-div{
+    display: grid;
+    width: 95%;
+    gap: 20px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: 
+        'card1 card2 card3 card4'
+    ;
+}
+
+.card-1{
+    grid-area: card1;
+}
+
+.card-2{
+    grid-area: card2;
+}
+
+.card-3{
+    grid-area: card3;
+}
+
+.card-4{
+    grid-area: card4;
+}
+
+.cards{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #D3D3D3;
+}
+
+.cards > img {
+    width: 70px;
+    margin-bottom: 15px;
+}
+
+.cards > h4{
+    font-size: 25px;
+}
+
+.cards > p{
+    font-size: 20px;
+}
+
+@keyframes section1 {
+    from{transform: translateX(0)}
+    to{transform: translateX(90px)}
+}
+
 @media screen and (max-width: 520px) {
 
     .item-2 > div{
