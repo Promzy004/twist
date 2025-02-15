@@ -291,7 +291,7 @@ main{
 
 
                                             /* all pages */
-.process-page, .service-page, .benefit-page, .project-page, .pricing-page{
+.process-page, .service-page, .benefit-page, .project-page, .pricing-page, .testimonial-page, .intro-offer-page, .about-page, .template-tutorial-page{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -814,6 +814,251 @@ main{
     color: white;
 }
 
+.testimonial-page{
+    position: relative;
+}
+
+.testimonial-container{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+}
+
+.testimonial-container > .image-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+
+.image-container > div{
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+    filter: grayscale(60%);
+}
+
+.image-container > div:hover{
+    filter: grayscale(40%);
+}
+
+.image-container > div:nth-child(1){
+    background: url(./images/testimonial1.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.image-container > div:nth-child(2){
+    background: url(./images/testimonial2.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.image-container > div:nth-child(3){
+    background: url(./images/testimonial3.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.image-container > div:nth-child(4){
+    background: url(./images/testimonial4.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.image-container > div:nth-child(5){
+    background: url(./images/testimonial5.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.image-container > .active{
+    width: 56px;
+    height: 56px;
+    filter: none;
+}
+
+.image-container > .active:hover{
+    filter: none;
+}
+
+.slider-container{
+    width: 100%;
+    position: relative;
+}
+
+.slider-item{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 25px;
+    display: none;
+    padding-bottom: 60px;
+}
+
+.slider-container > .active{
+    display: flex;
+}
+
+.slider-item > p{
+    font-size: 22px;
+    font-weight: 300;
+}
+
+.slider-item > div{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.slider-item > div > h4{
+    font-size: 19px;
+    font-weight: 300;
+}
+
+.slider-item > div > p{
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.intro-offer-page{
+    width: 80%;
+    background-color: #FAFAFA;
+    border: 1px solid #D3D3D3;
+    margin: 0 auto;
+    border-radius: 30px;
+}
+
+.form-section{
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    align-items: center;
+}
+
+form{
+    display: flex;
+    gap: 7px;
+}
+
+form > .text-input{
+    width: 230px;
+    height: 40px;
+    border-radius: 50px;
+    border: 1px solid #D3D3D3;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+
+form > .text-input:focus{
+    outline: none;
+    border: 1px solid #313131;
+}
+
+form > .text-input::placeholder{
+    font-size: 15px;
+    color: #a19f9f;
+    font-weight: 300;
+}
+
+form > .button{
+    width: 115px;
+    height: 38px;
+    border-radius: 50px;
+    border: none;
+    background-color: #313131;
+    color: #fff;
+    font-size: 17px;
+    margin-left: 10px;
+}
+
+.redesign{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.redesign > h4{
+    font-size: 18px;
+    font-weight: 450;
+}
+
+.redesign > div{
+    width: 100%;
+    height: 452px;
+    border: 1px solid #D3D3D3;
+    border-radius: 20px;
+    background: url(./images/image7.avif);
+    background-size: contain;
+}
+
+.about-container{
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-images{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+    margin-bottom: 25px;
+}
+
+.about-images > div:nth-child(1) {
+    width: 210px;
+    height: 270px;
+    background: url(./images/about1.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 2px solid #D3D3D3;
+    border-radius: 20px;
+    transform-origin: 241px 0px;
+    transform: rotateZ(-7deg);
+}
+
+.about-images > div:nth-child(2) {
+    width: 210px;
+    height: 270px;
+    background: url(./images/about2.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    border: 2px solid #D3D3D3;
+    border-radius: 20px;
+    transform-origin: 0px 0px;
+    transform: rotateZ(7deg);
+}
+
+.about-container > p{
+    font-size: 20px;
+    font-weight: 350;
+}
+
+.about-container > button{
+    width: 140px;
+    height: 44px;
+    font-size: 17px;
+    color: #fff;
+    background-color: #FF4F01;
+    border: none;
+    border-radius: 23px;
+}
 
 
 

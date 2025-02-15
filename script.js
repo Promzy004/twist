@@ -4,6 +4,8 @@ const detail_items = document.querySelectorAll('.detail-items');
 const service_images = document.querySelectorAll('.service-images');
 const project_descs = document.querySelectorAll('.project-desc');
 const arrows = document.querySelectorAll('.arrow-icon');
+const testimonial_images = document.querySelectorAll('.testimonial-image');
+const slider_items = document.querySelectorAll('.slider-item');
 
 
 // rotates the brand logo when mouse is over it
@@ -55,3 +57,24 @@ project_descs.forEach((project_desc, index) => {
         arrows[index].style.transform = '#FF4F01';
     })
 })
+
+
+
+let currentIndex = 0
+const slider = (currentIndex) => {
+    testimonial_images.forEach((testimonial_image, index) => {
+        testimonial_image.classList.remove('active')
+        if(currentIndex === index) {
+            testimonial_image.classList.add('active');
+            slider_items.forEach((slider_item) => {
+                slider_item.classList.remove('active');
+            })
+            slider_items[index].classList.add('active');
+        }
+    })
+}
+
+setInterval(() => {
+    currentIndex = (currentIndex == testimonial_images.length - 1) ? 0 : currentIndex + 1;
+    slider(currentIndex)
+}, 4000)
