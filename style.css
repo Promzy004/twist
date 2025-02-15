@@ -291,7 +291,7 @@ main{
 
 
                                             /* all pages */
-.process-page, .service-page, .benefit-page, .project-page{
+.process-page, .service-page, .benefit-page, .project-page, .pricing-page{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -307,6 +307,7 @@ main{
     align-items: center;
     text-align: center;
     gap: 15px;
+    margin-bottom: 40px;
 }
 
 .section-heading{
@@ -565,6 +566,256 @@ main{
     font-size: 17px;
     font-weight: 350;
 }
+
+.project-grid-container{
+    width: 90%;
+    display: grid;
+    grid-template-columns: repeat(2, 550px);
+    gap: 40px;
+    grid-template-rows: 20px 780px 70px 649px 120px 650px 17px;
+    grid-template-areas: 
+    
+        'grid1 .'
+        'grid1 grid2'
+        'grid1 grid4'
+        'grid3 grid4'
+        'grid3 grid6'
+        'grid5 grid6'
+        '. grid6'
+    ;
+}
+
+.project-grid-container > .grid-1{
+    grid-area: grid1;
+}
+
+.project-grid-container > .grid-2{
+    grid-area: grid2;
+}
+
+.project-grid-container > .grid-3{
+    grid-area: grid3;
+}
+
+.project-grid-container > .grid-4{
+    grid-area: grid4;
+}
+
+.project-grid-container > .grid-5{
+    grid-area: grid5;
+}
+
+.project-grid-container > .grid-6{
+    grid-area: grid6;
+}
+
+.project-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.project{
+    height: 85%;
+    width: 100%;
+    background: url(./images/work-backgrround.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+.project-img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+}
+
+.project-container:nth-child(1)  .project-img {
+    background: url(./images/project1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.project-container:nth-child(2)  .project-img {
+    background: url(./images/image1.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.project-container:nth-child(3)  .project-img {
+    background: url(./images/image11.avif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.project-container:nth-child(4)  .project-img {
+    background: url(./images/image7.avif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.project-container:nth-child(5)  .project-img {
+    background: url(./images/image4.avif);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.project-container:nth-child(6)  .project-img {
+    background: url(./images/project6.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.project-desc{
+    text-decoration: none;
+    max-width: 100%;
+    height: 15%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: #FAFAFA;
+    color: black;
+    padding: 25px;
+    border-radius: 20px;
+}
+
+.project-desc > div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.project-desc > div > h4{
+    font-size: 24px;
+    font-weight: 450;
+}
+
+.project-desc > div > h5{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 18px;
+    font-weight: 450;
+}
+
+.project-desc > p{
+    font-size: 17px;
+    font-weight: 350;
+}
+
+.project-desc img{
+    width: 20px;
+}
+
+.pricing-page{
+    width: 98%;
+    margin: 0 auto;
+    background-color: #FFFBF6;
+    border-radius: 30px;
+}
+
+.pricing-grid-container{
+    display: grid;
+    width: 85%;
+    gap: 15px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 20px 20px 500px;
+    grid-template-areas: 
+    
+        '. . grid3'
+        '. grid2 grid3'
+        'grid1 grid2 grid3'
+    ;
+}
+
+.pricing-grid1{
+    grid-area: grid1;
+}
+
+.pricing-grid2{
+    grid-area: grid2;
+    background-color: aqua;
+}
+
+.pricing-grid3{
+    grid-area: grid3;
+    background-color: green;
+}
+
+.pricing-grid{
+    border-radius: 20px;
+    border: 1px solid #D3D3D3;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 20px;
+    gap: 40px;
+    background-color: #fff;
+}
+
+.pricing-grid > .heading {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.pricing-grid > .heading > h4{
+    font-size: 21px;
+    font-weight: 450;
+}
+
+.pricing-grid > .heading > p{
+    font-size: 14px;
+    font-weight: 350;
+}
+
+.pricing-grid > .price{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.pricing-grid > .price > h3{
+    font-size: 28px;
+    font-weight: 450;
+}
+
+.pricing-grid > .price > h3 > span{
+    font-size: 15px;
+    font-weight: 400;
+    color: #626262;
+}
+
+.pricing-grid > .price > p{
+    font-size: 14px;
+    font-weight: 300;
+}
+
+.package-benefit > ul{
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;
+    gap: 12px;
+}
+
+.pricing-grid > button{
+    padding: 10px;
+    border-radius: 30px;
+    background-color: #000;
+    border: none;
+    font-size: larger;
+    color: white;
+}
+
+
+
 
 
 

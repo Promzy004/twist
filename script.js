@@ -2,6 +2,8 @@ const brand = document.querySelector('#brand');
 const brand_logo = document.querySelector('#brand-logo');
 const detail_items = document.querySelectorAll('.detail-items');
 const service_images = document.querySelectorAll('.service-images');
+const project_descs = document.querySelectorAll('.project-desc');
+const arrows = document.querySelectorAll('.arrow-icon');
 
 
 // rotates the brand logo when mouse is over it
@@ -43,5 +45,13 @@ detail_items.forEach((detail_item, index) => {
         //animates in the clicked item image, the keyframe used id written in the css 
         service_images[index].style.animation = 'animate-image 0.3s linear'
 
+    })
+})
+
+
+project_descs.forEach((project_desc, index) => {
+    project_desc.addEventListener('mouseover', () => {
+        arrows[index].style.transform = 'rotateZ(45deg)';
+        arrows[index].style.transform = '#FF4F01';
     })
 })
