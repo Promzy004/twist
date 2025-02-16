@@ -9,9 +9,9 @@
     font-style: normal;
 }
 
-body{
+/* body{
     overflow-x: hidden;
-}
+} */
 
 header{
     width: 100%;
@@ -21,7 +21,7 @@ header{
     align-items: center;
 }
 
-header > a {
+#brand {
     display: flex;
     gap: 10px;
     align-items: center;
@@ -30,7 +30,7 @@ header > a {
     color: black;
 }
 
-header img {
+#brand img {
     height: 20px;
 }
 
@@ -232,29 +232,31 @@ main{
     display: flex;
     gap: 50px;
     font-size: 25px;
-    animation: animate 25s linear infinite;
+    animation: animate-list 25s linear infinite;
     font-weight: 600;
 }
 
-@keyframes animate {
-    from{transform: translateX(105%);}
-    to{transform: translateX(-140%);}
+@keyframes animate-list {
+    /* from{transform: translateX(105%);}
+    to{transform: translateX(-140%);} */
+    from{transform: translateX(80vw);}
+    to{transform: translateX(-140vw);}
 }
 
 
-.section-1 > p{
+.section-1 > h5{
     margin-top: 20px;
-    width: 680px;
+    width: 60%;
     font-size: 24px;
     line-height: 35px;
     font-weight: 500;
 }
 
-.section-1 > p > span{
+.section-1 > h5 > span{
     font-size: 22px;
 }
 
-.section-1 > p > span > span {
+.section-1 > h5 > span > span {
     background-color: #FF4F01;
     color: white;
 }
@@ -291,13 +293,14 @@ main{
 
 
                                             /* all pages */
-.process-page, .service-page, .benefit-page, .project-page, .pricing-page, .testimonial-page, .intro-offer-page, .about-page, .template-tutorial-page{
+.process-page, .service-page, .benefit-page, .project-page, .pricing-page, .testimonial-page, .intro-offer-page, .about-page, .template-tutorial-page, .faq-page{
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     padding: 60px 0;
     gap: 40px;
+    box-sizing: border-box;
 }
 
 .section-heading-container{
@@ -570,9 +573,10 @@ main{
 .project-grid-container{
     width: 90%;
     display: grid;
-    grid-template-columns: repeat(2, 550px);
+    grid-template-columns: repeat(2, 1fr);
     gap: 40px;
-    grid-template-rows: 20px 780px 70px 649px 120px 650px 17px;
+    box-sizing: border-box;
+    grid-template-rows: 20px 780px 70px 649px 120px 620px 5px;
     grid-template-areas: 
     
         'grid1 .'
@@ -616,7 +620,7 @@ main{
 }
 
 .project{
-    height: 85%;
+    height: 80%;
     width: 100%;
     background: url(./images/work-backgrround.jpg);
     background-size: cover;
@@ -677,15 +681,16 @@ main{
 .project-desc{
     text-decoration: none;
     max-width: 100%;
-    height: 15%;
     display: flex;
     flex-direction: column;
+    justify-content: center;
     gap: 20px;
     background-color: #FAFAFA;
     color: black;
     padding: 25px;
     border-radius: 20px;
 }
+
 
 .project-desc > div{
     display: flex;
@@ -1060,6 +1065,194 @@ form > .button{
     border-radius: 23px;
 }
 
+.tutorial-container{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.tutorial-container > div{
+    width: 80%;
+    height: 450px;
+    background-color: red;
+    border-radius: 20px;
+}
+
+.tutorial-container > button{
+    padding: 10px 20px;
+    border-radius: 50px;
+    border: none;
+    background-color: #313131;
+    color: #fff;
+    font-size: 19px;
+    margin-left: 10px;
+}
+
+.question-section{
+    width: 55%;
+    box-sizing: border-box;
+    padding: 0 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.question-container{
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 15px;
+    border: 1px solid #D3D3D3;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+}
+
+.question-container > div{
+    display: flex;
+    justify-content: space-between;
+}
+
+.question{
+    cursor: pointer;
+}
+
+.question > h4{
+    font-size: 18px;
+    font-weight: 400;
+}
+
+.question > img{
+    width: 18px;
+    height: 18px;
+    transform: rotate(0deg);
+    animation: animate-question-btn-reverse 0.3s linear;
+}
+
+@keyframes animate-question-btn-reverse{
+    from{transform: rotate(135deg);}
+    to{transform: rotate(0deg);}
+}
+
+.question > .img-active{
+    width: 18px;
+    height: 18px;
+    transform: rotate(135deg);
+    animation: animate-question-btn 0.3s linear;
+}
+
+@keyframes animate-question-btn{
+    from{transform: rotate(0deg);}
+    to{transform: rotate(135deg);}
+}
+
+.question-container > .answer{
+    font-size: 16px;
+    font-weight: 300;
+    display: none;
+}
+
+.question-container > .active{
+    display: flex;
+}
+
+footer{
+    margin-top: 40px;
+    background-color: #FAFAFA;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 35px 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+footer a{
+    text-decoration: none;
+    color: #000;
+}
+
+footer a:hover{
+    color: #101010;
+}
+
+.footer1{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.social-handle{
+    display: flex;
+    gap: 10px;
+}
+
+.social-handle > a > img{
+    width: 18px;
+    height: 18px;
+}
+
+footer hr{
+    opacity: 0.3;
+}
+
+.footer2{
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.footer2 > div{
+    display: flex;
+    gap: 20px;
+}
+
+
+
+
+
+
+
+
+
+.scroll{
+    background-color: #101010;
+    position: fixed;
+    left: 50%;
+    bottom: 20px;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+    box-sizing: border-box;
+    padding: 8px;
+    border-radius: 30px;
+    display: none;
+}
+
+.icon{
+    border: 0.5px solid #5d5d5d; 
+    padding: 10px; 
+    border-radius: 20px; 
+    color: "#fff";
+    width: 40px; 
+    height: 40px; 
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+
+.scroll  .active{
+    color: #000;
+    background-color: #fff;
+    color: #313131;
+}
+
+
 
 
 
@@ -1091,7 +1284,176 @@ form > .button{
     }
 }
 
-@media screen and (max-width: 710px) {
+@media screen and (max-width: 890px){
+    .service-details{
+        flex-direction: column;
+        align-items: center;
+        width: 85%;
+    }
+
+    .service-details > .details-left{
+        width: 90%;
+        gap: 15px;
+    }
+
+    .detail-items{
+        gap: 10px;
+        padding: 20px;
+    }
+
+    .detail-items > h4{
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        font-size: 18px;
+        font-weight: 400;
+    }
+    
+    
+    .detail-items > p{
+        display: none;
+        padding-left: 35px;
+        font-size: 15px;
+        font-weight: 350;
+    }
+
+    .active-detail {
+        background-color: #FAFAFA;
+    }
+    
+    .active-detail > p{
+        display: flex;
+    }
+
+    .service-details > .details-right{
+        width: 80%;
+    }
+
+    .benfit-cards-container{
+        width: 85%;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: 
+    
+            'card1 card2'
+            'card3 card4'
+            'card5 card6'
+        ;
+    }
+
+    .project-grid-container{
+        width: 90%;
+        grid-template-columns: 1fr 4fr 1fr;
+        grid-template-rows: 840px 750px 566px 672px 545px 863px ;
+        grid-template-areas: 
+        
+            '. grid1 .'
+            '. grid3 .'
+            '. grid5 .'
+            '. grid2 .'
+            '. grid4 .'
+            '. grid6 .'
+        ;
+    }
+
+    .project-desc{
+        height: 90px;
+        padding: 40px 20px;
+    }
+
+    .project{
+        height: 75%;
+    }
+
+    .pricing-grid-container{
+        grid-template-columns: 1fr 4fr 1fr;
+        grid-template-rows: 500px 540px 580px;
+        grid-template-areas: 
+        
+            '. grid1 .'
+            '. grid2 .'
+            '. grid3 .'
+        ;
+    }
+
+    .testimonial-container{
+        width: 70%;
+    }
+
+    .about-container{
+        width: 70%;
+    }
+
+    .tutorial-container{
+        width: 90%;
+    }
+
+    .tutorial-container > div{
+        width: 100%;
+    }
+
+    .question-section{
+        width: 75%;
+        box-sizing: border-box;
+        padding: 0 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .form-section{
+        width: 85%;
+    }
+
+    form{
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        align-items: center;
+        width: 100%;
+    }
+    
+    form > .text-input{
+        width: 100%;
+        height: 40px;
+        border-radius: 50px;
+        border: 1px solid #D3D3D3;
+        box-sizing: border-box;
+        padding: 0 20px;
+    }
+
+    form > .button{
+        margin-top: 15px;
+    }
+
+    
+}
+
+@media screen and (max-width: 760px) {
+
+
+    .section-heading-container{
+        width: 80%;
+    }
+
+    main{
+        grid-template-columns: repeat(5, 260px);
+        grid-template-rows: 50px 140px 0px 40px 138px 50px 138px 50px;
+        grid-template-areas: 
+        
+            '. item2 item2 item2 .'
+            'item1 item2 item2 item2 item3'
+            'item1 . item6 . item3'
+            'item4 item5 item6 item7 item8'
+            'item4 item5 item11 item7 item8'
+            'item9 item10 item11 item12 item13'
+            'item9 item10 item14 item12 item13'
+            '. . item14 . .'
+        ;
+    }
+
+    .item-2{
+        justify-content: center;
+    }
 
     .item-2 > div{
         width: 440px;
@@ -1106,27 +1468,34 @@ form > .button{
         font-size: 18px;
     }
 
-    .section-1 > p{
+    .section-1 > h3 {
+        font-size: 16px;
+        font-weight: 450;
+    }
+
+    .section-1 > h5{
         margin-top: 20px;
-        width: 85%;
-        font-size: 24px;
+        width: 90%;
+        font-size: 20px;
         line-height: 35px;
         font-weight: 500;
     }
     
-    .section-1 > p > span{
-        font-size: 22px;
+    .section-1 > h5 > span{
+        font-size: 18px;
     }
 
     .cards-div{
         display: grid;
         width: 95%;
         gap: 20px;
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(1, 1fr);
         grid-template-rows: auto;
         grid-template-areas: 
-            'card1 card2'
-            'card3 card4'
+            'card1'
+            'card2'
+            'card3'
+            'card4'
         ;
     }
 
@@ -1173,9 +1542,125 @@ form > .button{
     .service-details > .details-right{
         width: 80%;
     }
+
+    .benfit-cards-container{
+        display: grid;
+        width: 85%;
+        gap: 20px;
+        grid-template-columns: repeat(1, 1fr);
+        grid-template-areas: 
+    
+            'card1'
+            'card2'
+            'card3'
+            'card4'
+            'card5'
+            'card6'
+        ;
+    }
+
+    .pricing-grid-container{
+        grid-template-columns: 1fr;
+        width: 70%;
+        grid-template-rows: 500px 540px 580px;
+        grid-template-areas: 
+        
+            ' grid1 '
+            ' grid2 '
+            ' grid3 '
+        ;
+    }
+
+    .project-grid-container{
+        width: 90%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 840px 750px 566px 672px 545px 863px ;
+        grid-template-areas: 
+        
+            'grid1'
+            'grid3'
+            'grid5'
+            'grid2'
+            'grid4'
+            'grid6'
+        ;
+    }
+
+    .intro-offer-page{
+        width: 90%;
+    }
+
+    .form-section{
+        width: 90%;
+    }
+
+    .about-container{
+        width: 90%;
+    }
+
+    .question-section{
+        width: 90%;
+        padding: 0px;
+    }
+
+    .question-container{
+        width: 100%;
+    }
+
+    body p{
+        font-size: 15px !important;
+    }
+
+    .sub-heading{
+        font-size: 26px;
+        font-weight: 400;
+    }
+    
+    .heading-desc{
+        font-size: 17px;
+        font-weight: 350;
+    }
+
+    .question > h4{
+        font-size: 15px;
+    }
 }
 
-@media screen and (max-width: 510px) {
+@media screen and (max-width: 550px) {
+
+    main{
+        grid-template-columns: repeat(5, 210px);
+        grid-template-rows: 50px 140px 0px 40px 138px 50px 138px 50px;
+        grid-template-areas: 
+        
+            '. item2 item2 item2 .'
+            'item1 item2 item2 item2 item3'
+            'item1 . item6 . item3'
+            'item4 item5 item6 item7 item8'
+            'item4 item5 item11 item7 item8'
+            'item9 item10 item11 item12 item13'
+            'item9 item10 item14 item12 item13'
+            '. . item14 . .'
+        ;
+    }
+    
+    
+    .item-2{
+        display: flex;
+        justify-content: center;
+        gap: 0px;
+    }
+    .item-2 > div{
+        width: 70%;
+        font-size: 26px;
+        line-height: 25px;
+        padding-top: 15px;
+    }
+    
+    .item-2 > p{
+        width: 70%;
+        font-size: 13px;
+    }
 
     .section-heading-container{
         display: flex;
@@ -1207,5 +1692,52 @@ form > .button{
     .service-details > .details-right{
         width: 90%;
         padding: 20px;
+    }
+
+    .pricing-grid-container{
+        width: 90%;
+        grid-template-columns: 1fr;
+        grid-template-rows: 500px 540px 580px;
+        grid-template-areas: 
+        
+            'grid1'
+            'grid2'
+            'grid3'
+        ;
+    }
+
+    footer{
+        padding: 20px 30px;
+    }
+    
+    .footer2{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        font-size: 13px !important;
+    }
+
+    .footer2 > p{
+        font-size: 13px;
+    }
+    
+    .footer2 > div{
+        display: flex;
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
+
+    .service-details > .details-right{
+        width: 70%;
+        height: 200px;
+        padding: 40px;
+        overflow: hidden;
+        border-radius: 20px;
+        border: 1px solid rgba(188, 186, 186, 0.3);
+        background-color: #FAFAFA;
+        position: relative;
     }
 }

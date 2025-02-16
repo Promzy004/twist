@@ -1,22 +1,32 @@
-const brand = document.querySelector('#brand');
-const brand_logo = document.querySelector('#brand-logo');
+const brands = document.querySelectorAll('#brand');
+const brand_logo = document.querySelectorAll('#brand-logo');
 const detail_items = document.querySelectorAll('.detail-items');
 const service_images = document.querySelectorAll('.service-images');
 const project_descs = document.querySelectorAll('.project-desc');
 const arrows = document.querySelectorAll('.arrow-icon');
 const testimonial_images = document.querySelectorAll('.testimonial-image');
 const slider_items = document.querySelectorAll('.slider-item');
+const questions = document.querySelectorAll('.question');
+const answers = document.querySelectorAll('.answer');
+const question_buttons = document.querySelectorAll('.question > img');
+const icons = document.querySelectorAll('.icon');
+const menu = document.querySelector('.scroll');
+const pages_in_view = document.querySelectorAll('.scroll-page')
 
 
 // rotates the brand logo when mouse is over it
-brand.addEventListener('mouseover', () => {
-    brand_logo.style.animation = 'brand-logo 0.5s ease-out 1'
+brands.forEach((brand,index) => {
+    brand.addEventListener('mouseover', () => {
+        brand_logo[index].style.animation = 'brand-logo 0.5s ease-out 1'
+    })
 })
 
 
 // reverse the brand logo rotation when mouse out of it
-brand.addEventListener('mouseout', () => {
-    brand_logo.style.animation = 'brand-logo-reverse 0.5s ease-out 1'
+brands.forEach((brand,index) => {
+    brand.addEventListener('mouseout', () => {
+        brand_logo[index].style.animation = 'brand-logo-reverse 0.5s ease-out 1'
+    })
 })
 
 
@@ -74,7 +84,80 @@ const slider = (currentIndex) => {
     })
 }
 
+// testimonial_images.forEach((hi, index) => {
+//     hi.addEventListener('click', () => {
+//         currentIndex = testimonial_images[index + 1]
+//         console.log(testimonial_images[index])
+//         slider(currentIndex)
+
+//         console.log('hello')
+//     })
+// })
+
 setInterval(() => {
     currentIndex = (currentIndex == testimonial_images.length - 1) ? 0 : currentIndex + 1;
     slider(currentIndex)
 }, 4000)
+
+
+
+
+questions.forEach((question,index) => {
+    question.addEventListener('click', () => {
+
+        const currentlyActive = answers[index].classList.contains('active');
+
+        answers.forEach((answer) => {
+            answer.classList.remove('active');
+        })
+
+        question_buttons.forEach((btn) => {
+            btn.classList.remove('img-active');
+        })
+
+        if(!currentlyActive) {
+            answers[index].classList.add('active');
+            question_buttons[index].classList.add('img-active');
+        } else{
+            answers[index].classList.remove('active');
+            question_buttons[index].classList.remove('img-active');
+        }
+    })
+})
+
+
+icons.forEach((icon) => {
+    icon.addEventListener('click', () => {
+        icons.forEach((r_icon) => {
+            r_icon.classList.remove('active');
+        })
+        icon.classList.add('active');
+    })
+})
+
+
+
+
+window.addEventListener('scroll', () => {
+    if(window.scrollY > 730){
+        menu.style.display = 'flex';
+    } else{
+        menu.style.display = 'none';
+    }
+})
+
+
+const scroll_top = icons[0]
+scroll_top.addEventListener('click' , () => {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    })
+})
+
+
+window.addEventListener('wheel' , () => {
+    icons.forEach((icon) => {
+        icon.classList.remove('active');
+    })
+})
