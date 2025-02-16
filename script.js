@@ -60,7 +60,7 @@ detail_items.forEach((detail_item, index) => {
     })
 })
 
-
+//loops through all arrow in the project description so as to add 
 project_descs.forEach((project_desc, index) => {
     project_desc.addEventListener('mouseover', () => {
         arrows[index].style.transform = 'rotateZ(45deg)';
@@ -71,6 +71,8 @@ project_descs.forEach((project_desc, index) => {
 
 
 let currentIndex = 0
+
+//compare the currentindex value by looping through and then give out image and item output with same value
 const slider = (currentIndex) => {
     testimonial_images.forEach((testimonial_image, index) => {
         testimonial_image.classList.remove('active')
@@ -84,16 +86,7 @@ const slider = (currentIndex) => {
     })
 }
 
-// testimonial_images.forEach((hi, index) => {
-//     hi.addEventListener('click', () => {
-//         currentIndex = testimonial_images[index + 1]
-//         console.log(testimonial_images[index])
-//         slider(currentIndex)
-
-//         console.log('hello')
-//     })
-// })
-
+//images automatically slides after 4 seconds
 setInterval(() => {
     currentIndex = (currentIndex == testimonial_images.length - 1) ? 0 : currentIndex + 1;
     slider(currentIndex)
@@ -102,30 +95,39 @@ setInterval(() => {
 
 
 
+//loops that checks clicked questions to display the answer
 questions.forEach((question,index) => {
     question.addEventListener('click', () => {
 
+        //asign a variable with an answer that have active classname
         const currentlyActive = answers[index].classList.contains('active');
 
+        //loops through to remove active clasname from all answer
         answers.forEach((answer) => {
             answer.classList.remove('active');
         })
 
+        //loop that add image-active to the plus icon, the classname have been style in css
         question_buttons.forEach((btn) => {
             btn.classList.remove('img-active');
         })
 
+        //checks if current active variable is true or false
         if(!currentlyActive) {
+
+            //adds this classnames to false current active variable
             answers[index].classList.add('active');
             question_buttons[index].classList.add('img-active');
         } else{
+
+            //adds this classname to false current active variable
             answers[index].classList.remove('active');
             question_buttons[index].classList.remove('img-active');
         }
     })
 })
 
-
+//loops through al menu icon to add active classname to the one been clicked
 icons.forEach((icon) => {
     icon.addEventListener('click', () => {
         icons.forEach((r_icon) => {
@@ -137,16 +139,21 @@ icons.forEach((icon) => {
 
 
 
-
+//checks when window is been scrolled above 730px 
 window.addEventListener('scroll', () => {
     if(window.scrollY > 730){
+
+        //shows menu if true
         menu.style.display = 'flex';
     } else{
+
+        //removes menu if false
         menu.style.display = 'none';
     }
 })
 
 
+//scrolls to top when the arrow icon in the menu is been clicked
 const scroll_top = icons[0]
 scroll_top.addEventListener('click' , () => {
     window.scrollTo({
@@ -156,6 +163,7 @@ scroll_top.addEventListener('click' , () => {
 })
 
 
+//removes active classname from all icon in the menu when been scrolled
 window.addEventListener('wheel' , () => {
     icons.forEach((icon) => {
         icon.classList.remove('active');
