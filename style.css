@@ -21,6 +21,20 @@ header{
     align-items: center;
 }
 
+/* button{
+    cursor: pointer;
+    background: linear-gradient(to right, #FF4F01 50%, black 50%) !important;
+    background-size: 200% 100%;
+    background-position: 0% 0;
+    transition: background-position 0.5s ease-in-out;
+}
+
+button:hover{
+    background-position: -100% 0 !important;
+} */
+
+
+
 #brand {
     display: flex;
     gap: 10px;
@@ -1223,15 +1237,41 @@ footer hr{
 .scroll{
     background-color: #101010;
     position: fixed;
+    display: flex;
+    justify-self: center;
     left: 50%;
-    bottom: 20px;
-    transform: translateX(-50%);
+    bottom: 0;
+    transform: translate(-50%,0) scale(1);
     display: flex;
     gap: 5px;
     box-sizing: border-box;
     padding: 8px;
     border-radius: 30px;
     display: none;
+}
+
+.animate-in-menu{
+    animation: animate-menu 0.3s linear forwards;
+}
+
+.animate-out-menu{
+    animation: animate-menu-reverse 0.3s linear forwards;
+}
+
+
+
+/* @keyframes animate-menu{
+    from{bottom: -10px; transform: scale(0); opacity: 0;}
+    to{bottom: 50px;transform: scale(1); opacity: 1;}
+} */
+@keyframes animate-menu{
+    0%{bottom: -30px; transform: translate(-50%,0) scale(0); opacity: 0.5;}
+    100%{bottom: 10px; transform: translate(-50%,-30%) scale(1); opacity: 1;}
+}
+
+@keyframes animate-menu-reverse{
+    0%{bottom: 10px; transform: translate(-50%,-30%) scale(1); opacity: 1;}
+    100%{bottom: -30px; transform: translate(-50%,0) scale(0); opacity: 0.5;}
 }
 
 .icon{

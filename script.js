@@ -12,6 +12,20 @@ const question_buttons = document.querySelectorAll('.question > img');
 const icons = document.querySelectorAll('.icon');
 const menu = document.querySelector('.scroll');
 const pages_in_view = document.querySelectorAll('.scroll-page')
+const buttons = document.querySelectorAll('button');
+console.log(buttons)
+// const styles = document.getComputedStyle()
+
+// buttons.forEach((button, index) => {
+//     button.addEventListener('mouseover',  () => {
+//         console.log(button.style.backgroundColor)
+//         if(button.style.backgroundColor == 'rgb(255, 79, 1)'){
+//             button.style.animation = 'button 2s ease-in linear'
+//             button.style.backgroundColor = '#000'
+//             console.log(button.style.color)
+//         }
+//     })
+// })
 
 
 // rotates the brand logo when mouse is over it
@@ -145,11 +159,16 @@ window.addEventListener('scroll', () => {
 
         //shows menu if true
         menu.style.display = 'flex';
+        menu.classList.remove('animate-out-menu')
+        menu.classList.add('animate-in-menu')
     } else{
 
         //removes menu if false
-        menu.style.display = 'none';
+        menu.classList.remove('animate-in-menu')
+        menu.classList.add('animate-out-menu')
     }
+
+    console.log(menu.classList)
 })
 
 
