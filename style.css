@@ -1232,14 +1232,6 @@ footer hr{
 
 
 
-/* .menu-container{
-    background-color: blue;
-    color: black;
-    width: 500px;
-    z-index: 2;
-    position: fixed;
-} */
-
 .hover-text{
     color: #fff;
     display: flex;
@@ -1249,7 +1241,7 @@ footer hr{
 }
 
 .hover-text > span{
-    background-color: red;
+    background-color: #101010;
     border-radius: 15px;
     padding: 3px 7px;
     font-size: 12px;
@@ -1258,9 +1250,17 @@ footer hr{
     position: relative;
 }
 
+.hover-text > span:nth-child(4) {
+    margin: 0px 4px;
+}
+
+.hover-text > span:nth-child(7) {
+    margin: 0 -20px;
+}
+
 @keyframes menu-text-animate{
-    0%{bottom: 30%; transform: translate(-50%,0)z; opacity: 0.5;}
-    100%{bottom: 100%; transform: translate(-50%,-30%); opacity: 1;}
+    0%{transform: translateY(10px); opacity: 0.5;}
+    100%{ transform: translateY(0); opacity: 1;}
 }
 
 
@@ -1323,12 +1323,21 @@ footer hr{
     cursor: pointer;
 }
 
+.icon:last-child{
+    background-color: #FF4F01 !important;
+    color: #fff !important;
+}
+
 
 .scroll  .active{
     color: #000;
     background-color: #fff;
     color: #313131;
 }
+
+/* .icon:last-child{
+    background-color: #FF4F01 !important;
+} */
 
 
 

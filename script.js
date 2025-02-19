@@ -14,10 +14,34 @@ const menu = document.querySelector('.scroll');
 const pages_in_view = document.querySelectorAll('.scroll-page')
 const buttons = document.querySelectorAll('button');
 const menu_texts = document.querySelectorAll('.menu-text');
+const first_rows = document.querySelectorAll('.first-row');
+const last_rows = document.querySelectorAll('.last-row');
+const hero_grid = document.querySelector('.hero-grid');
+
+
+//moves the first and last row of the hero page when been scrolled
+window.addEventListener('scroll', () => {
+
+    //assigned the vertical scroll value of the window to a variable
+    let scrollAmount = window.scrollY;
+    console.log(scrollAmount)
+
+    //transform the first and last row using the window scroll value diving it by 8 to give out the value of the translate
+    first_rows.forEach((first_row) => {
+        first_row.style.transform = `translateY(-${scrollAmount / 8}px)`
+    })
+    last_rows.forEach((last_row) => {
+        last_row.style.transform = `translateY(-${scrollAmount / 8}px)`
+    })
+} )
+
+
+
 
 icons.forEach((icon,index) => {
     icon.addEventListener('mouseover', () => {
         menu_texts[index].style.visibility = 'visible'
+        menu_texts[index].style.animation = 'menu-text-animate 0.2s linear'
     })
 })
 
@@ -175,6 +199,10 @@ icons.forEach((icon, index) => {
 
             //removes active from all icons
             r_icon.classList.remove('active');
+        })
+
+        menu_texts.forEach((menu_text) => {
+            menu_text.style.visibility = 'hidden'
         })
 
         //add active classname to the one been clicked
