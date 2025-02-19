@@ -13,7 +13,22 @@ const icons = document.querySelectorAll('.icon');
 const menu = document.querySelector('.scroll');
 const pages_in_view = document.querySelectorAll('.scroll-page')
 const buttons = document.querySelectorAll('button');
-console.log(buttons)
+const menu_texts = document.querySelectorAll('.menu-text');
+
+icons.forEach((icon,index) => {
+    icon.addEventListener('mouseover', () => {
+        menu_texts[index].style.visibility = 'visible'
+    })
+})
+
+icons.forEach((icon,index) => {
+    icon.addEventListener('mouseleave', () => {
+        menu_texts[index].style.visibility = 'hidden'
+    })
+})
+// console.log(buttons)
+// console.log(pages_in_view)
+// console.log(icons)
 // const styles = document.getComputedStyle()
 
 // buttons.forEach((button, index) => {
@@ -141,21 +156,41 @@ questions.forEach((question,index) => {
     })
 })
 
-//loops through al menu icon to add active classname to the one been clicked
-icons.forEach((icon) => {
+// icons.forEach((icon) => {
+//     icon.addEventListener('click', () => {
+//         icons.forEach((r_icon) => {
+//             r_icon.classList.remove('active');
+//         })
+//         icon.classList.add('active');
+//     })
+// })
+
+
+//looped through and then added a click event to all icon in the menu bar
+icons.forEach((icon, index) => {
     icon.addEventListener('click', () => {
+
+        //loops through again
         icons.forEach((r_icon) => {
+
+            //removes active from all icons
             r_icon.classList.remove('active');
         })
+
+        //add active classname to the one been clicked
         icon.classList.add('active');
+
+        //when been clicked, it scroll to the page according to the indexing when been looped
+        //so it means if the icon 2 is clicked then it should take me to the page with the index of 2
+        pages_in_view[index].scrollIntoView({
+            behavior: 'smooth'
+        })
     })
 })
 
-
-
 //checks when window is been scrolled above 730px 
 window.addEventListener('scroll', () => {
-    if(window.scrollY > 730){
+    if(window.scrollY > 700){
 
         //shows menu if true
         menu.style.display = 'flex';
@@ -167,9 +202,31 @@ window.addEventListener('scroll', () => {
         menu.classList.remove('animate-in-menu')
         menu.classList.add('animate-out-menu')
     }
-
-    console.log(menu.classList)
 })
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if(entry.isIntersecting) {
+            const index = pagesArray.indexOf(entry.target);
+            console.log(index)
+            if(index !== -1) {
+                icons.forEach((icon) => {
+                    icon.classList.remove('active');
+                })
+                icons[index].classList.add('active');
+            }
+        } 
+    })
+})
+
+const pagesArray = Array.from(pages_in_view)
+
+pagesArray.forEach((page) => {
+    observer.observe(page)
+}) 
+
+
+
 
 
 //scrolls to top when the arrow icon in the menu is been clicked
@@ -183,8 +240,8 @@ scroll_top.addEventListener('click' , () => {
 
 
 //removes active classname from all icon in the menu when been scrolled
-window.addEventListener('wheel' , () => {
-    icons.forEach((icon) => {
-        icon.classList.remove('active');
-    })
-})
+// window.addEventListener('wheel' , () => {
+//     icons.forEach((icon) => {
+//         icon.classList.remove('active');
+//     })
+// })

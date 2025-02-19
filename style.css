@@ -1232,12 +1232,42 @@ footer hr{
 
 
 
+/* .menu-container{
+    background-color: blue;
+    color: black;
+    width: 500px;
+    z-index: 2;
+    position: fixed;
+} */
+
+.hover-text{
+    color: #fff;
+    display: flex;
+    box-sizing: border-box;
+    position: absolute;
+    bottom: 110%;
+}
+
+.hover-text > span{
+    background-color: red;
+    border-radius: 15px;
+    padding: 3px 7px;
+    font-size: 12px;
+    margin: 0px -6.5px;
+    visibility: hidden;
+    position: relative;
+}
+
+@keyframes menu-text-animate{
+    0%{bottom: 30%; transform: translate(-50%,0)z; opacity: 0.5;}
+    100%{bottom: 100%; transform: translate(-50%,-30%); opacity: 1;}
+}
 
 
 .scroll{
     background-color: #101010;
     position: fixed;
-    display: flex;
+    display: none;
     justify-self: center;
     left: 50%;
     bottom: 0;
@@ -1248,6 +1278,14 @@ footer hr{
     padding: 8px;
     border-radius: 30px;
     display: none;
+    flex-direction: column;
+    box-sizing: border-box;
+    flex-wrap: nowrap;
+}
+
+.hi{
+    display: flex;
+    gap: 5px;
 }
 
 .animate-in-menu{
