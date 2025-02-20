@@ -5,13 +5,12 @@
 *{
     margin: 0;
     font-family: "Inter", serif;
-    /* font-weight: 100; */
     font-style: normal;
 }
 
-/* body{
-    overflow-x: hidden;
-} */
+
+/* ================================================================================= header section     */
+
 
 header{
     width: 100%;
@@ -58,8 +57,6 @@ button:hover::before{
     height: 180%;
 }
 
-
-
 #brand {
     display: flex;
     gap: 10px;
@@ -83,6 +80,7 @@ button:hover::before{
     to{transform: rotateZ(0deg);}
 }
 
+/* ================================================================================= hero section     */
 
 main{
     background-color: #fafafa;
@@ -244,6 +242,9 @@ main{
     background-repeat: no-repeat;
 }
 
+/* ================================================================================= top company section     */
+
+
 .section-1 {
     width: 100%;
     display: flex;
@@ -259,9 +260,6 @@ main{
     font-weight: 450;
 }
 
-                                                /* ////////////////////gjgjgjgjgjgjg */
-
-
 
 .section-1 .companies-design-list{
     margin-inline: auto;
@@ -269,6 +267,7 @@ main{
     height: 100px;
     overflow: hidden;
     width: 60%;
+    user-select: none;
 }
 
 
@@ -372,7 +371,7 @@ main{
 }
 
 
-                                            /* all pages */
+/* ================================================================================= header for all pages section     */
 .process-page, .service-page, .benefit-page, .project-page, .pricing-page, .testimonial-page, .intro-offer-page, .about-page, .template-tutorial-page, .faq-page{
     display: flex;
     flex-direction: column;
@@ -394,8 +393,6 @@ main{
 }
 
 .section-heading{
-    /* width: 110px; */
-    /* height: 32px; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -416,6 +413,8 @@ main{
     font-size: 17px;
     font-weight: 350;
 }
+
+/* ================================================================================= process page     */
 
 .cards-div{
     display: grid;
@@ -467,6 +466,8 @@ main{
     font-size: 17px;
     font-weight: 350;
 }
+
+/* ================================================================================= service page     */
 
 .service-details{
     width: 85%;
@@ -542,6 +543,13 @@ main{
     display: flex;
 }
 
+@keyframes animate-image{
+    from{transform: translateX(50%);}
+    to{transform: translateX(width);}
+}
+
+/* ================================================================================= benefit page     */
+
 .benfit-cards-container{
     display: grid;
     width: 85%;
@@ -556,32 +564,26 @@ main{
 
 .benfit-cards-container > .box-1 {
     grid-area: card1;
-    /* grid-area: unlimited-resources; */
 }
 
 .benfit-cards-container > .box-2 {
     grid-area: card2;
-    /* grid-area: Lightning-fast; */
 }
 
 .benfit-cards-container > .box-3 {
     grid-area: card3;
-    /* grid-area: No-contracts; */
 }
 
 .benfit-cards-container > .box-4 {
     grid-area: card4;
-    /* grid-area: No-extra-Charges; */
 }
 
 .benfit-cards-container > .box-5 {
     grid-area: card5;
-    /* grid-area: Top-notch-quality; */
 }
 
 .benfit-cards-container > .box-6 {
     grid-area: card6;
-    /* grid-area: Risk-free-Revisions; */
 }
 
 .benefit-cards{
@@ -649,6 +651,8 @@ main{
     font-size: 17px;
     font-weight: 350;
 }
+
+/* ================================================================================= project page     */
 
 .project-grid-container{
     width: 90%;
@@ -799,6 +803,8 @@ main{
     width: 20px;
 }
 
+/* ================================================================================= pricing page     */
+
 .pricing-page{
     width: 98%;
     margin: 0 auto;
@@ -898,6 +904,8 @@ main{
     font-size: larger;
     color: white;
 }
+
+/* ================================================================================= testimonial page     */
 
 .testimonial-page{
     position: relative;
@@ -1014,6 +1022,8 @@ main{
     font-weight: 300;
 }
 
+/* ================================================================================= intro offer page     */
+
 .intro-offer-page{
     width: 80%;
     background-color: #FAFAFA;
@@ -1088,6 +1098,8 @@ form > .button{
     background-size: contain;
 }
 
+/* ================================================================================= about page     */
+
 .about-container{
     width: 55%;
     display: flex;
@@ -1145,6 +1157,8 @@ form > .button{
     border-radius: 23px;
 }
 
+/* ================================================================================= tutorial page     */
+
 .tutorial-container{
     width: 70%;
     display: flex;
@@ -1169,6 +1183,8 @@ form > .button{
     font-size: 19px;
     margin-left: 10px;
 }
+
+/* ================================================================================= faq page     */
 
 .question-section{
     width: 55%;
@@ -1238,6 +1254,8 @@ form > .button{
     display: flex;
 }
 
+/* ================================================================================= footer section     */
+
 footer{
     margin-top: 40px;
     background-color: #FAFAFA;
@@ -1293,10 +1311,7 @@ footer hr{
 }
 
 
-
-
-
-
+/* ================================================================================= menu hover text     */
 
 .hover-text{
     color: #fff;
@@ -1329,6 +1344,8 @@ footer hr{
     100%{ transform: translateY(0); opacity: 1;}
 }
 
+/* ================================================================================= menu section     */
+
 
 .scroll{
     background-color: #101010;
@@ -1347,6 +1364,7 @@ footer hr{
     flex-direction: column;
     box-sizing: border-box;
     flex-wrap: nowrap;
+    z-index: 99;
 }
 
 .hi{
@@ -1363,11 +1381,6 @@ footer hr{
 }
 
 
-
-/* @keyframes animate-menu{
-    from{bottom: -10px; transform: scale(0); opacity: 0;}
-    to{bottom: 50px;transform: scale(1); opacity: 1;}
-} */
 @keyframes animate-menu{
     0%{bottom: -30px; transform: translate(-50%,0) scale(0); opacity: 0.5;}
     100%{bottom: 10px; transform: translate(-50%,-30%) scale(1); opacity: 1;}
@@ -1401,26 +1414,13 @@ footer hr{
     color: #313131;
 }
 
-/* .icon:last-child{
-    background-color: #FF4F01 !important;
-} */
 
 
-
-
-
-
-@keyframes animate-image{
-    from{transform: translateX(50%);}
-    to{transform: translateX(width);}
-}
-
-
-
-@keyframes section1 {
+/* @keyframes section1 {
     from{transform: translateX(0)}
     to{transform: translateX(90px)}
-}
+} */
+
 
 @media screen and (max-width: 1070px){
 

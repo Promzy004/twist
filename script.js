@@ -15,6 +15,8 @@ const pages_in_view = document.querySelectorAll('.scroll-page')
 const menu_texts = document.querySelectorAll('.menu-text');
 const first_rows = document.querySelectorAll('.first-row');
 const last_rows = document.querySelectorAll('.last-row');
+const second_rows = document.querySelectorAll('.second-row');
+const forth_rows = document.querySelectorAll('.forth-row');
 const hero_grid = document.querySelector('.hero-grid');
 
 //===================================================================================================================
@@ -31,6 +33,12 @@ window.addEventListener('scroll', () => {
     })
     last_rows.forEach((last_row) => {
         last_row.style.transform = `translateY(-${scrollAmount / 8}px)`
+    })
+    second_rows.forEach((second_row) => {
+        second_row.style.transform = `translateY(${scrollAmount / 15}px)`
+    })
+    forth_rows.forEach((forth_row) => {
+        forth_row.style.transform = `translateY(${scrollAmount / 15}px)`
     })
 } )
 
@@ -189,9 +197,12 @@ icons.forEach((icon, index) => {
 
         //when been clicked, it scroll to the page according to the indexing when been looped
         //so it means if the icon 2 is clicked then it should take me to the page with the index of 2
-        pages_in_view[index].scrollIntoView({
-            behavior: 'smooth'
-        })
+        //useed the if condition to stop it from taking effect on the last icon
+        if(index <= 5) {
+            pages_in_view[index].scrollIntoView({
+                behavior: 'smooth'
+            })
+        }
     })
 })
 
