@@ -12,19 +12,18 @@ const question_buttons = document.querySelectorAll('.question > img');
 const icons = document.querySelectorAll('.icon');
 const menu = document.querySelector('.scroll');
 const pages_in_view = document.querySelectorAll('.scroll-page')
-const buttons = document.querySelectorAll('button');
 const menu_texts = document.querySelectorAll('.menu-text');
 const first_rows = document.querySelectorAll('.first-row');
 const last_rows = document.querySelectorAll('.last-row');
 const hero_grid = document.querySelector('.hero-grid');
 
+//===================================================================================================================
 
 //moves the first and last row of the hero page when been scrolled
 window.addEventListener('scroll', () => {
 
     //assigned the vertical scroll value of the window to a variable
     let scrollAmount = window.scrollY;
-    console.log(scrollAmount)
 
     //transform the first and last row using the window scroll value diving it by 8 to give out the value of the translate
     first_rows.forEach((first_row) => {
@@ -35,37 +34,26 @@ window.addEventListener('scroll', () => {
     })
 } )
 
+//===================================================================================================================
 
-
-
+//added a mouse over to the icons in menu, so it could display the title when been hovered
 icons.forEach((icon,index) => {
     icon.addEventListener('mouseover', () => {
+
+        //makes the menu text visible when been hovered on
         menu_texts[index].style.visibility = 'visible'
         menu_texts[index].style.animation = 'menu-text-animate 0.2s linear'
     })
 })
 
+//added a mouse out to the icons in menu, so it could remove the title when been unhovered
 icons.forEach((icon,index) => {
     icon.addEventListener('mouseleave', () => {
         menu_texts[index].style.visibility = 'hidden'
     })
 })
-// console.log(buttons)
-// console.log(pages_in_view)
-// console.log(icons)
-// const styles = document.getComputedStyle()
 
-// buttons.forEach((button, index) => {
-//     button.addEventListener('mouseover',  () => {
-//         console.log(button.style.backgroundColor)
-//         if(button.style.backgroundColor == 'rgb(255, 79, 1)'){
-//             button.style.animation = 'button 2s ease-in linear'
-//             button.style.backgroundColor = '#000'
-//             console.log(button.style.color)
-//         }
-//     })
-// })
-
+//===================================================================================================================
 
 // rotates the brand logo when mouse is over it
 brands.forEach((brand,index) => {
@@ -82,7 +70,7 @@ brands.forEach((brand,index) => {
     })
 })
 
-
+//===================================================================================================================
 
 //// loop for the service page, it iterates through when an item in the list is clicked and then display the description and image of the clicked item
 
@@ -121,10 +109,9 @@ project_descs.forEach((project_desc, index) => {
     })
 })
 
-
+//===================================================================================================================
 
 let currentIndex = 0
-
 //compare the currentindex value by looping through and then give out image and item output with same value
 const slider = (currentIndex) => {
     testimonial_images.forEach((testimonial_image, index) => {
@@ -146,7 +133,7 @@ setInterval(() => {
 }, 4000)
 
 
-
+//===================================================================================================================
 
 //loops that checks clicked questions to display the answer
 questions.forEach((question,index) => {
@@ -180,15 +167,7 @@ questions.forEach((question,index) => {
     })
 })
 
-// icons.forEach((icon) => {
-//     icon.addEventListener('click', () => {
-//         icons.forEach((r_icon) => {
-//             r_icon.classList.remove('active');
-//         })
-//         icon.classList.add('active');
-//     })
-// })
-
+//===================================================================================================================
 
 //looped through and then added a click event to all icon in the menu bar
 icons.forEach((icon, index) => {
@@ -216,6 +195,8 @@ icons.forEach((icon, index) => {
     })
 })
 
+//===================================================================================================================
+
 //checks when window is been scrolled above 730px 
 window.addEventListener('scroll', () => {
     if(window.scrollY > 700){
@@ -232,30 +213,38 @@ window.addEventListener('scroll', () => {
     }
 })
 
+//===================================================================================================================
+
+//the intersecion observer used to perform what happens when a page is in view
 const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
         if(entry.isIntersecting) {
+
+            //used a variable to store the index of the page been whic is currently in view
             const index = pagesArray.indexOf(entry.target);
-            console.log(index)
             if(index !== -1) {
+
+                //removes active class from all icons in menu
                 icons.forEach((icon) => {
                     icon.classList.remove('active');
                 })
+
+                //adds active class to the icons in menu which page is in view
                 icons[index].classList.add('active');
             }
         } 
     })
 })
 
+//converted the nodelist to array so i could use the indexOf funtion to get their index
 const pagesArray = Array.from(pages_in_view)
 
+//looped through the pages so as to observe them individually
 pagesArray.forEach((page) => {
     observer.observe(page)
 }) 
 
-
-
-
+//===================================================================================================================
 
 //scrolls to top when the arrow icon in the menu is been clicked
 const scroll_top = icons[0]
@@ -265,11 +254,3 @@ scroll_top.addEventListener('click' , () => {
         behavior: "smooth"
     })
 })
-
-
-//removes active classname from all icon in the menu when been scrolled
-// window.addEventListener('wheel' , () => {
-//     icons.forEach((icon) => {
-//         icon.classList.remove('active');
-//     })
-// })
